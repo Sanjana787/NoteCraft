@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Notes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <section>
+        <div class="container mt-2">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <h3>Edit Your Notes</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="/user/updateNotes" method="post" th:object="${notes}">
+                                <div class="mb-3">
+                                    <label>Enter Title</label>
+                                    <input type="text" th:field="*{title}" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Enter Description</label>
+                                    <textarea rows="6" th:field="*{description}" class="form-control" required></textarea>
+                                </div>
+                                <input type="hidden" th:field="*{id}"> <!-- Hidden field for ID -->
+                                <button class="btn btn-primary mt-4">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
