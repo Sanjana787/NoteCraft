@@ -112,7 +112,7 @@ public class UserController {
         if (f) {
             session.setAttribute("msg", "Notes deleted successfully");
         } else {
-            session.setAttribute("msg", "Something went wrong");
+            session.setAttribute("msg", "Somethingit dg went wrong");
         }
         return "redirect:/user/viewNotes"; // Redirect to view notes page
     }
